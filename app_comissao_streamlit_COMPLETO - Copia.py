@@ -92,6 +92,6 @@ df.to_csv(output, index=False, sep=";", encoding='utf-8')
 st.download_button(
     label="📥 Baixar Relatório em CSV",
     data=output.getvalue(),
-    file_name=f"Relatorio_Comissao_{nome}_{data_atual}.csv",
+    file_name=nome_arquivo_csv,
     mime="text/csv"
 )
