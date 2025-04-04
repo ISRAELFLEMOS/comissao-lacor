@@ -1,8 +1,12 @@
+Aqui está o código reescrito de forma organizada:
+
+```python
 import streamlit as st
 import pandas as pd
 import datetime
 from io import BytesIO
 
+# Configuração da página
 st.set_page_config(page_title="Comissão La Cor", layout="centered")
 st.title("🧾 Calculadora de Comissão - La Cor Tintas")
 
@@ -29,6 +33,7 @@ funcionarios = {
     },
 }
 
+# Formulário de entrada
 with st.form("formulario"):
     nome = st.selectbox("Selecione o Funcionário", list(funcionarios.keys()))
     dados = funcionarios[nome]
@@ -86,12 +91,16 @@ if submitted:
     df = pd.DataFrame([resultado])
     data_atual = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')
     arquivo_excel = f"Relatorio_Comissao_{nome}_{data_atual}.xlsx"
+    nome_arquivo_csv = f"Relatorio_Comissao_{nome}_{data_atual}.csv"
 
     output = BytesIO()
-df.to_csv(output, index=False, sep=";", encoding='utf-8')
-st.download_button(
-    label="📥 Baixar Relatório em CSV",
-    data=output.getvalue(),
-    file_name=nome_arquivo_csv,
-    mime="text/csv"
-)
+    df.to_csv(output, index=False, sep=";", encoding='utf-8')
+    st.download_button(
+        label="📥 Baixar Relatório em CSV",
+        data=output.getvalue(),
+        file_name=nome_arquivo_csv,
+        mime="text/csv"
+    )
+```
+
+Este código está organizado e indentado corretamente, garantindo que as variáveis sejam definidas e utilizadas de forma coerente.
