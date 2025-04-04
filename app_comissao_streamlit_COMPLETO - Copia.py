@@ -1,6 +1,4 @@
-Aqui está o código reescrito de forma organizada:
-
-```python
+#qui está o código reescrito de forma organizada:
 import streamlit as st
 import pandas as pd
 import datetime
