@@ -99,6 +99,4 @@ if submitted:
         file_name=nome_arquivo_csv,
         mime="text/csv"
     )
-```
-
-Este código está organizado e indentado corretamente, garantindo que as variáveis sejam definidas e utilizadas de forma coerente.
+#Este código está organizado e indentado corretamente, garantindo que as variáveis sejam definidas e utilizadas de forma coerente.
