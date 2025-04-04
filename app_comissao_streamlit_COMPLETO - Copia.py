@@ -88,10 +88,10 @@ if submitted:
     arquivo_excel = f"Relatorio_Comissao_{nome}_{data_atual}.xlsx"
 
     output = BytesIO()
-    df.to_excel(output, index=False, engine='openpyxl')
-    st.download_button(
-        label="📥 Baixar Excel do Relatório",
-        data=output.getvalue(),
-        file_name=arquivo_excel,
-        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    )
+df.to_csv(output, index=False, sep=";", encoding='utf-8')
+st.download_button(
+    label="📥 Baixar Relatório em CSV",
+    data=output.getvalue(),
+    file_name=f"Relatorio_Comissao_{nome}_{data_atual}.csv",
+    mime="text/csv"
+)
